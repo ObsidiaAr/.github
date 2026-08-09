@@ -1,0 +1,65 @@
+name: Epic
+description: Define a long-lived product platform or delivery surface.
+title: "[Epic] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for a long-lived platform-level Epic such as Mobile, Web or API.
+        Epics are containers for Features and should not describe atomic delivery work.
+
+  - type: textarea
+    id: purpose
+    attributes:
+      label: Purpose
+      description: What role does this platform play in the product?
+      placeholder: Describe the platform responsibility and why it exists.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What belongs inside this Epic?
+      placeholder: List the major areas, modules or responsibilities covered by this platform.
+    validations:
+      required: true
+
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Boundaries / Non-goals
+      description: What explicitly does not belong in this Epic?
+      placeholder: Clarify adjacent responsibilities that belong elsewhere.
+    validations:
+      required: false
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Which other platforms, external systems or product areas does this Epic depend on?
+      placeholder: List relevant dependencies or write None.
+    validations:
+      required: false
+
+  - type: textarea
+    id: success
+    attributes:
+      label: Success criteria
+      description: How will we know this platform is fulfilling its intended role?
+      placeholder: Define product or operational outcomes, not implementation details.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Definition checklist
+      options:
+        - label: This issue represents a platform or major delivery surface, not a Feature or Task.
+          required: true
+        - label: The scope and boundaries are clear enough to classify future Features.
+          required: true
