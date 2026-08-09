@@ -1,0 +1,92 @@
+name: Feature
+description: Define a product module or broad capability within an Epic.
+title: "[Feature] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for a module or broad product capability.
+        Features may span more than one Sprint and should eventually decompose into atomic Tasks.
+
+  - type: input
+    id: epic
+    attributes:
+      label: Epic / Platform
+      description: Which platform owns this Feature?
+      placeholder: "Example: Web, Mobile, API"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / Opportunity
+      description: What user or product problem does this Feature address?
+      placeholder: Describe the problem before describing the solution.
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Expected outcome
+      description: What capability or value should exist when this Feature is complete?
+      placeholder: Describe the desired product outcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What is included in this Feature?
+      placeholder: List included behaviors or capability boundaries.
+    validations:
+      required: true
+
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: Non-goals
+      description: What is explicitly out of scope?
+      placeholder: Clarify adjacent behavior that should not be assumed.
+    validations:
+      required: false
+
+  - type: input
+    id: spec
+    attributes:
+      label: Related SPEC
+      description: Link or path to the governing specification when available.
+      placeholder: "Example: docs/specs/SPEC-004-authentication.md"
+    validations:
+      required: false
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies / Risks
+      description: Known dependencies, risks or open questions.
+      placeholder: List dependencies, risks or unresolved points.
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Feature-level acceptance criteria
+      description: High-level criteria for considering this Feature complete.
+      placeholder: Use clear, verifiable outcomes.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Definition checklist
+      options:
+        - label: This item is broader than a single atomic User Story.
+          required: true
+        - label: The Feature can be decomposed into one or more Tasks.
+          required: true
