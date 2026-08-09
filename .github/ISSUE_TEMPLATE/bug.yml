@@ -1,0 +1,115 @@
+name: Bug
+description: Record a defect and preserve traceability through diagnosis, correction and release.
+title: "[Bug] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for behavior that differs from an approved or expected result.
+        Severity and release may be managed at Project level; priority may be managed through organization metadata.
+
+  - type: input
+    id: feature
+    attributes:
+      label: Affected Feature
+      description: Which Feature is affected?
+      placeholder: Feature issue number or name
+    validations:
+      required: false
+
+  - type: input
+    id: spec
+    attributes:
+      label: Related SPEC / expected behavior source
+      description: Link or path to the governing SPEC, Task or other approved source of expected behavior.
+      placeholder: "Example: docs/specs/SPEC-004-authentication.md or #123"
+    validations:
+      required: false
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+      description: What actually happens?
+      placeholder: Describe the defect precisely.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should happen instead?
+      placeholder: Describe the approved or expected result.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Provide the shortest reliable reproduction path.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment / context
+      description: Relevant platform, version, browser, device, environment or data context.
+      placeholder: "Example: Web / Chrome / staging / release 0.4.0"
+    validations:
+      required: false
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: Who or what is affected, and how severely?
+      placeholder: Describe operational, user or data impact.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Logs, screenshots, error messages, request IDs or other useful evidence.
+      placeholder: Paste or link evidence. Remove secrets and sensitive data.
+    validations:
+      required: false
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround
+      description: Is there a temporary workaround?
+      placeholder: Describe it or write None.
+    validations:
+      required: false
+
+  - type: textarea
+    id: resolution
+    attributes:
+      label: Resolution notes
+      description: Complete during investigation or fix with root cause and correction summary.
+      placeholder: Root cause, corrective action and regression considerations.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: quality
+    attributes:
+      label: Reporting checklist
+      options:
+        - label: The observed and expected behaviors are distinguishable.
+          required: true
+        - label: Reproduction steps are sufficient for another person or agent to investigate.
+          required: true
+        - label: Sensitive credentials or secrets are not included.
+          required: true
