@@ -1,0 +1,91 @@
+name: Task
+description: Define an atomic User Story ready to be planned into a Sprint.
+title: "[Task] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for an atomic User Story that should fit within one Sprint.
+        A Task should reference its Feature, governing SPEC and acceptance criteria when applicable.
+
+  - type: input
+    id: feature
+    attributes:
+      label: Feature
+      description: Which Feature does this Task belong to?
+      placeholder: Feature issue number or name
+    validations:
+      required: true
+
+  - type: input
+    id: spec
+    attributes:
+      label: Related SPEC
+      description: Link or path to the governing specification.
+      placeholder: "Example: docs/specs/SPEC-004-authentication.md"
+    validations:
+      required: true
+
+  - type: textarea
+    id: user_story
+    attributes:
+      label: User Story
+      description: Express the expected value from the actor's point of view.
+      placeholder: "As a ..., I want ..., so that ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Add only the context needed to implement this story correctly.
+      placeholder: Relevant constraints, existing behavior or dependencies.
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List verifiable acceptance criteria. Reference AC identifiers from the SPEC where possible.
+      placeholder: |
+        - AC-001: ...
+        - AC-002: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies / Blockers
+      description: Known dependencies or blockers.
+      placeholder: List dependencies or write None.
+    validations:
+      required: false
+
+  - type: textarea
+    id: testing
+    attributes:
+      label: Validation notes
+      description: Important test scenarios or validation expectations not already explicit in the SPEC.
+      placeholder: Describe relevant happy path, failure path or edge cases.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: ready
+    attributes:
+      label: Definition of Ready
+      options:
+        - label: The related Feature is identified.
+          required: true
+        - label: The governing SPEC exists and is reviewed.
+          required: true
+        - label: Acceptance criteria are explicit and testable.
+          required: true
+        - label: Known dependencies and blockers are visible.
+          required: true
+        - label: The story is small enough to complete within one Sprint.
+          required: true
